@@ -55,13 +55,14 @@ const Home = () => {
       <div className="headline-one text-center py-4">
         Join the <span className="text-color-one">COMMUNITY</span>
       </div>
-      <ScrollFadeIn style={"w-full"}>
-        <img src="/images/community.png" className="w-full" />
+      <div className="md:flex md:flex-row-reverse">
+        <ScrollFadeIn style={"w-full md:w-1/2"}>
+        <img src="/images/community.png" className="w-full md:h-full object-cover" />
       </ScrollFadeIn>
-      <div className="headline-two text-center py-4 border-b">
-        DISCOVER YOUR POTENTIAL
-      </div>
-      <div className="bg-color-two">
+      <div className="bg-color-two md:w-1/2">
+        <div className="headline-two text-center py-4 border-b">
+          DISCOVER YOUR POTENTIAL
+        </div>
         <div className="p-6 border-b">
           <div className="headline-four">Expert Coaching</div>
           <p className="paragraph-two">
@@ -85,6 +86,7 @@ const Home = () => {
             View Classes
           </Link>
         </button>
+      </div>
       </div>
     </>
   );
