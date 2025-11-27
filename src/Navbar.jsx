@@ -19,19 +19,19 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`${icon}-icon w-18 h-18`}
+          className={`md:hidden ${icon}-icon w-18 h-18`}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         />
       </div>
-      {navbarItems.map((item) => (
-        <ul
-          className={`uppercase bg-[#E9ECFF] pb-2 text-center z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out`}
-        >
-          <li key={item}>
+      <ul
+        className={`uppercase bg-[#E9ECFF] pb-2 text-center z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden`}
+      >
+        {navbarItems.map((item) => (
+          <li key={item.href}>
             <a href={item.href}>{item.name}</a>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </>
   );
 };
