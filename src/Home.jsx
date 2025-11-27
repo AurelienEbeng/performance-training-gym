@@ -9,10 +9,9 @@ const Home = () => {
       </div>
       {/* Hero section */}
       <div className="md:flex">
-        <img
-          src="/images/heroImage.png"
-          className=" w-full md:w-2/3 object-cover"
-        />
+        <ScrollFadeIn style={"w-full md:w-2/3"}>
+          <img src="/images/heroImage.png" className="w-full md:h-full object-cover" />
+        </ScrollFadeIn>
         <div className="bg-color-two px-8 md:w-1/3">
           <div className="uppercase headline-two pt-4 md:pb-40">
             FOR THE COMMITTED
@@ -30,7 +29,10 @@ const Home = () => {
       {/* Mission section */}
       <div className="md:flex md:flex-row-reverse">
         <ScrollFadeIn style={"w-full md:w-1/3"}>
-          <img src="/images/mission.png" className=" w-full md:h-full object-cover" />
+          <img
+            src="/images/mission.png"
+            className=" w-full md:h-full object-cover"
+          />
         </ScrollFadeIn>
         <div className="md:flex border-b md:w-2/3">
           <div className="bg-color-two p-8 md:w-1/2">
@@ -57,36 +59,39 @@ const Home = () => {
       </div>
       <div className="md:flex md:flex-row-reverse">
         <ScrollFadeIn style={"w-full md:w-1/2 lg:w-2/3"}>
-        <img src="/images/community.png" className="w-full md:h-full object-cover" />
-      </ScrollFadeIn>
-      <div className="bg-color-two md:w-1/2 lg:w-1/3">
-        <div className="headline-two text-center py-4 border-b">
-          DISCOVER YOUR POTENTIAL
+          <img
+            src="/images/community.png"
+            className="w-full md:h-full object-cover"
+          />
+        </ScrollFadeIn>
+        <div className="bg-color-two md:w-1/2 lg:w-1/3">
+          <div className="headline-two text-center py-4 border-b">
+            DISCOVER YOUR POTENTIAL
+          </div>
+          <div className="p-6 border-b">
+            <div className="headline-four">Expert Coaching</div>
+            <p className="paragraph-two">
+              Trainers who are passionate about your progress.
+            </p>
+          </div>
+          <div className="p-6 border-b">
+            <div className="headline-four">Results-Driven Programs</div>
+            <p className="paragraph-two">
+              Workouts that deliver tangible, measurable results.
+            </p>
+          </div>
+          <div className="p-6 border-b">
+            <div className="headline-four">A Supportive Tribe</div>
+            <p className="paragraph-two">
+              A community that pushes you to be your best.
+            </p>
+          </div>
+          <button className="w-full p-10">
+            <Link to="/reserve" className="links-button p-4">
+              View Classes
+            </Link>
+          </button>
         </div>
-        <div className="p-6 border-b">
-          <div className="headline-four">Expert Coaching</div>
-          <p className="paragraph-two">
-            Trainers who are passionate about your progress.
-          </p>
-        </div>
-        <div className="p-6 border-b">
-          <div className="headline-four">Results-Driven Programs</div>
-          <p className="paragraph-two">
-            Workouts that deliver tangible, measurable results.
-          </p>
-        </div>
-        <div className="p-6 border-b">
-          <div className="headline-four">A Supportive Tribe</div>
-          <p className="paragraph-two">
-            A community that pushes you to be your best.
-          </p>
-        </div>
-        <button className="w-full p-10">
-          <Link to="/reserve" className="links-button p-4">
-            View Classes
-          </Link>
-        </button>
-      </div>
       </div>
     </>
   );
