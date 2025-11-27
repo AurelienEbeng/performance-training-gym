@@ -56,10 +56,10 @@ const Home = () => {
         Join the <span className="text-color-one">COMMUNITY</span>
       </div>
       <div className="md:flex md:flex-row-reverse">
-        <ScrollFadeIn style={"w-full md:w-1/2"}>
+        <ScrollFadeIn style={"w-full md:w-1/2 lg:w-2/3"}>
         <img src="/images/community.png" className="w-full md:h-full object-cover" />
       </ScrollFadeIn>
-      <div className="bg-color-two md:w-1/2">
+      <div className="bg-color-two md:w-1/2 lg:w-1/3">
         <div className="headline-two text-center py-4 border-b">
           DISCOVER YOUR POTENTIAL
         </div>
