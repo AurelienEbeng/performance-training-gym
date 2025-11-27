@@ -51,6 +51,41 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Community section */}
+      <div className="headline-one text-center py-4">
+        Join the <span className="text-color-one">COMMUNITY</span>
+      </div>
+      <ScrollFadeIn style={"w-full"}>
+        <img src="/images/community.png" className="w-full" />
+      </ScrollFadeIn>
+      <div className="headline-two text-center py-4 border-b">
+        DISCOVER YOUR POTENTIAL
+      </div>
+      <div className="bg-color-two">
+        <div className="p-6 border-b">
+          <div className="headline-four">Expert Coaching</div>
+          <p className="paragraph-two">
+            Trainers who are passionate about your progress.
+          </p>
+        </div>
+        <div className="p-6 border-b">
+          <div className="headline-four">Results-Driven Programs</div>
+          <p className="paragraph-two">
+            Workouts that deliver tangible, measurable results.
+          </p>
+        </div>
+        <div className="p-6 border-b">
+          <div className="headline-four">A Supportive Tribe</div>
+          <p className="paragraph-two">
+            A community that pushes you to be your best.
+          </p>
+        </div>
+        <button className="w-full p-10">
+          <Link to="/reserve" className="links-button p-4">
+            View Classes
+          </Link>
+        </button>
+      </div>
     </>
   );
 };

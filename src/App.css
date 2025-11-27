@@ -32,12 +32,16 @@
     @apply text-3xl md:text-4xl lg:text-5xl font-bold font-anek-tamil uppercase;
   }
 
+  .headline-four {
+    @apply text-xl md:text-2xl font-bold font-anek-tamil uppercase;
+  }
+
   .paragraph-two {
     @apply text-sm lg:text-lg font-normal font-geist;
   }
 
   .links-button {
-    @apply font-geist-mono font-normal text-base uppercase;
+    @apply font-geist-mono font-normal text-base uppercase hover:bg-black hover:text-white rounded-xl;
   }
 }
 
