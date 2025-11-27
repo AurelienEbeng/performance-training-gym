@@ -30,7 +30,7 @@ const Home = () => {
       {/* Mission section */}
       <div className="md:flex md:flex-row-reverse">
         <ScrollFadeIn style={"w-full md:w-1/3"}>
-          <img src="/images/mission.png" className=" w-full object-cover" />
+          <img src="/images/mission.png" className=" w-full md:h-full object-cover" />
         </ScrollFadeIn>
         <div className="md:flex border-b md:w-2/3">
           <div className="bg-color-two p-8 md:w-1/2">
