@@ -28,27 +28,28 @@ const Home = () => {
         </div>
       </div>
       {/* Mission section */}
-      <ScrollFadeIn>
-        <img
-          src="/images/mission.png"
-          className=" w-full md:w-1/3 object-cover"
-        />
-      </ScrollFadeIn>
-      <div className="bg-color-two p-8">
-        <div className="headline-two">Guided by experts</div>
-        <p className="paragraph-two">
-          We believe in creating a positive environment where you can thrive.
-          We're here to help you achieve your goals and unlock your full
-          potential.
-        </p>
-      </div>
-      <div className="bg-color-two p-8 border-y">
-        <div className="headline-two">DYNAMIC OPEN GYM</div>
-        <p className="paragraph-two">
-          Our facility is the optimal environment for strength training and
-          performance, fully equipped with top-of-the-line tools, ample training
-          areas, and a focus on functional movement.
-        </p>
+      <div className="md:flex md:flex-row-reverse">
+        <ScrollFadeIn style={"w-full md:w-1/3"}>
+          <img src="/images/mission.png" className=" w-full object-cover" />
+        </ScrollFadeIn>
+        <div className="md:flex border-b md:w-2/3">
+          <div className="bg-color-two p-8 md:w-1/2">
+            <div className="headline-two md:pb-40">Guided by experts</div>
+            <p className="paragraph-two">
+              We believe in creating a positive environment where you can
+              thrive. We're here to help you achieve your goals and unlock your
+              full potential.
+            </p>
+          </div>
+          <div className="bg-color-two p-8 max-sm:border-y md:border-l md:w-1/2">
+            <div className="headline-two md:pb-40">DYNAMIC OPEN GYM</div>
+            <p className="paragraph-two">
+              Our facility is the optimal environment for strength training and
+              performance, fully equipped with top-of-the-line tools, ample
+              training areas, and a focus on functional movement.
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

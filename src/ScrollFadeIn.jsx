@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const ScrollFadeIn = ({ children }) => {
+const ScrollFadeIn = ({ children, style }) => {
   const ref = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,7 +19,7 @@ const ScrollFadeIn = ({ children }) => {
   }, []);
 
   return (
-    <div ref={ref} className="opacity-0">
+    <div ref={ref} className={`opacity-0 ${style}`}>
       {children}
     </div>
   );
