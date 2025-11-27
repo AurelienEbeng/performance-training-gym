@@ -11,13 +11,22 @@ const Navbar = () => {
   const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-100";
   return (
     <>
-      <div className="flex justify-between px-4 bg-[#E9ECFF] items-center">
+      <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5">
         <div className="flex items-center">
           <img src="/vector.svg" />
-          <div className="font-instrument-sans font-bold text-xl pl-2">
+          <div className="font-bold text-xl pl-2">
             PrimalTraining
           </div>
         </div>
+        <ul
+            className={`max-md:hidden uppercase bg-[#E9ECFF] pb-2 text-center flex gap-4 pr-4`}
+          >
+            {navbarItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="hover:bg-gray-300 p-2 rounded-lg">{item.name}</a>
+              </li>
+            ))}
+          </ul>
         <div
           className={`md:hidden ${icon}-icon w-18 h-18`}
           onClick={() => setIsMenuOpen((prev) => !prev)}
