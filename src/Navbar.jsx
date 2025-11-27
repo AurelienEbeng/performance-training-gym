@@ -9,10 +9,10 @@ const Navbar = () => {
     { href: "/about", name: "about" },
     { href: "/reserve", name: "reserve your spot" },
   ];
-  const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-100";
+  const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-60";
   return (
     <nav>
-      <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5 fixed w-full top-0">
+      <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5 sticky w-full">
         <a href="/" className="flex items-center">
           <img src="/vector.svg" />
           <div className="font-bold text-xl pl-2">PrimalTraining</div>
@@ -41,7 +41,7 @@ const Navbar = () => {
         />
       </div>
       <ul
-        className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden`}
+        className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full` }
       >
         {navbarItems.map((item) => (
           <li key={item.href} className="p-4">
