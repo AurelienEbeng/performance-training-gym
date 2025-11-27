@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
   ];
   const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-100";
   return (
-    <>
+    <nav>
       <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5 fixed w-full top-0">
         <a href="/" className="flex items-center">
           <img src="/vector.svg" />
@@ -21,8 +22,8 @@ const Navbar = () => {
         >
           {navbarItems.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className={
                   item.href === "/reserve"
                     ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px]"
@@ -30,7 +31,7 @@ const Navbar = () => {
                 }
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -44,8 +45,8 @@ const Navbar = () => {
       >
         {navbarItems.map((item) => (
           <li key={item.href} className="p-4">
-            <a
-              href={item.href}
+            <Link
+              to={item.href}
               className={
                 item.href === "/reserve"
                   ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px]"
@@ -53,11 +54,11 @@ const Navbar = () => {
               }
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
-    </>
+    </nav>
   );
 };
 
