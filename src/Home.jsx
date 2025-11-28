@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ScrollFadeIn from "./ScrollFadeIn";
+import { LINKS } from "./constants";
 
 const Home = () => {
   return (
@@ -10,19 +11,22 @@ const Home = () => {
       {/* Hero section */}
       <div className="md:flex">
         <ScrollFadeIn style={"w-full md:w-2/3"}>
-          <img src="/images/heroImage.png" className="w-full md:h-full object-cover" />
+          <img
+            src="/images/heroImage.png"
+            className="w-full md:h-full object-cover"
+          />
         </ScrollFadeIn>
         <div className="bg-color-two px-8 md:w-1/3">
           <div className="uppercase headline-two pt-4 md:pb-40">
             FOR THE COMMITTED
           </div>
-          <p className="paragraph-two">
+          <p className="paragraph-two pb-4">
             Train like an athlete with top-tier equipment and expert
             programming. Whether you're building muscle or breaking PRs, we help
             you push past limits.
           </p>
-          <button className="links-button py-8 pl-4">
-            <Link to="/about">About us</Link>
+          <button className="links-button p-4">
+            <Link to={LINKS.about}>About us</Link>
           </button>
         </div>
       </div>
@@ -87,10 +91,20 @@ const Home = () => {
             </p>
           </div>
           <button className="w-full p-10">
-            <Link to="/reserve" className="links-button p-4">
+            <Link to={LINKS.reserve} className="links-button p-4">
               View Classes
             </Link>
           </button>
+        </div>
+      </div>
+      {/* CTA */}
+      <div className="bg-color-one h-screen flex justify-center items-center">
+        <div className="text-center space-y-5 md:px-20 lg:px-0">
+          <div className="paragraph-two uppercase">What we believe in</div>
+          <div className="headline-three">Join the primal tribe today!</div>
+          <Link className="links-button bg-color-two hover:bg-black p-4" to={LINKS.reserve}>
+            Reserve you spot
+          </Link>
         </div>
       </div>
     </>

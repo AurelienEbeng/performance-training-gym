@@ -32,6 +32,10 @@
     @apply text-3xl md:text-4xl lg:text-5xl font-bold font-anek-tamil uppercase;
   }
 
+  .headline-three {
+    @apply text-5xl md:text-6xl font-bold font-anek-tamil uppercase;
+  }
+
   .headline-four {
     @apply text-xl md:text-2xl font-bold font-anek-tamil uppercase;
   }
