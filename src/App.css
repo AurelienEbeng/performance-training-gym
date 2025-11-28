@@ -40,8 +40,16 @@
     @apply text-xl md:text-2xl font-bold font-anek-tamil uppercase;
   }
 
+  .headline-five {
+    @apply text-xl font-bold font-anek-tamil uppercase;
+  }
+
   .paragraph-two {
     @apply text-sm lg:text-lg font-normal font-geist;
+  }
+
+  .paragraph-three {
+    @apply text-sm font-bold font-geist;
   }
 
   .links-button {
