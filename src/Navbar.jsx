@@ -44,7 +44,7 @@ const Navbar = () => {
         className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full` }
       >
         {navbarItems.map((item) => (
-          <li key={item.href} className="p-4">
+          <li key={item.href} className="p-4" onClick={() => setIsMenuOpen(false)}>
             <Link
               to={item.href}
               className={
