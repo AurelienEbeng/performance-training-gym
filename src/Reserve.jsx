@@ -1,3 +1,4 @@
+import CallToAction from "./CallToAction";
 import GymClass from "./GymClass";
 
 const Reserve = () => {
@@ -21,6 +22,12 @@ const Reserve = () => {
         name="COMMUNITY CLASSES"
         schedule={["Weekdays at 8AM"]}
         description="Experience the power of collective effort with our custom Workout of the Day. Push your limits alongside like-minded individuals."
+      />
+      <CallToAction
+        bgColor="bg-color-one"
+        btnBgColor="bg-color-two"
+        headingText="Primal Personal Training"
+        paragraphBelowHeadingText="Receive personalized guidance and tailored programs designed to unlock your individual primal potential. Our expert coaches will guide you every step of the way."
       />
     </>
   );

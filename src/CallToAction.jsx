@@ -18,6 +18,9 @@ const CallToAction = ({
             {paragraphAboveHeadingText}
           </div>
           <div className="headline-three">{headingText}</div>
+          <div className="paragraph-two md:px-20 lg:px-70">
+            {paragraphBelowHeadingText}
+          </div>
           <Link
             className={`${btnBgColor} links-button hover:bg-black p-4`}
             to={LINKS.reserve}
