@@ -1,12 +1,18 @@
+import useWindowSize from "./custom hooks/useWindowSize";
 import ScrollFadeIn from "./ScrollFadeIn";
 
 const About = () => {
+  let windowSize = useWindowSize();
+  let reconnectImage =
+    windowSize.width <= 640 ? "reconnectMobile" : "reconnect";
+
   return (
     <>
       {/* Header section */}
       <div className="text-center text-black py-4 border-y headline-one">
         About us
       </div>
+
       <div className="md:flex md:flex-row-reverse">
         <ScrollFadeIn style={"w-full md:w-1/2 lg:w-1/3"}>
           <img
@@ -38,6 +44,7 @@ const About = () => {
             alt="Image of person deadlifting with a  barbell"
           />
         </ScrollFadeIn>
+        {/* Dynamic section */}
         <div className="bg-color-two p-6 md:w-1/2 lg:w-1/3">
           <div className="md:flex md:flex-col md:justify-between md:h-full">
             <div className="headline-two pb-6">DYNAMIC OPEN GYM</div>
@@ -50,6 +57,14 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* Reconnect section */}
+      <ScrollFadeIn style={"w-full"}>
+        <img
+          src={`/images/about/${reconnectImage}.png`}
+          className="w-full h-full object-cover"
+          alt="Image of woman working out"
+        />
+      </ScrollFadeIn>
     </>
   );
 };
