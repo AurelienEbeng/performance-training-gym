@@ -3,7 +3,7 @@ import { LINKS } from "./constants";
 
 const GymClass = ({ name, schedule, description }) => {
   return (
-    <div className="bg-color-two px-6 border-b pb-6">
+    <div className={`bg-color-two px-6 border-b pb-6 md:flex md:flex-col md:justify-between ${name==="Strength"?"":"md:border-l"}`}>
       <div className="headline-two pb-40 pt-4">{name}</div>
       {schedule.map((item) => (
         <>
@@ -13,7 +13,7 @@ const GymClass = ({ name, schedule, description }) => {
       ))}
       <div className="paragraph-one pb-6">{description}</div>
       <Link
-        className="bg-color-one links-button hover:bg-black p-4 block text-center"
+        className="bg-color-one links-button hover:bg-black p-4 block text-center border"
         to={LINKS.reserve}
       >
         Reserve you spot

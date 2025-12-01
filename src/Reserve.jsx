@@ -7,7 +7,8 @@ const Reserve = () => {
       <div className="text-center text-gray-900 py-4 border-y headline-one">
         Book a <span className="text-color-one">Session</span>
       </div>
-      <GymClass
+      <div className="md:flex" >
+        <GymClass
         name="Strength"
         schedule={["Weekdays at 6AM", "Weekends and Holidays at 8AM"]}
         description="Build a foundation of raw power with our comprehensive weightlifting and
@@ -23,6 +24,7 @@ const Reserve = () => {
         schedule={["Weekdays at 8AM"]}
         description="Experience the power of collective effort with our custom Workout of the Day. Push your limits alongside like-minded individuals."
       />
+      </div>
       <CallToAction
         bgColor="bg-color-one"
         btnBgColor="bg-color-two"
