@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="font-bold text-xl pl-2">PrimalTraining</div>
         </a>
         <ul
-          className={`max-md:hidden uppercase bg-[#E9ECFF] pb-2 text-center flex gap-4 pr-4`}
+          className={`max-md:hidden uppercase bg-[#E9ECFF] pb-2 text-center flex md:w-2/5 md:justify-evenly`}
         >
           {navbarItems.map((item) => (
             <li key={item.href}>
@@ -26,8 +26,8 @@ const Navbar = () => {
                 to={item.href}
                 className={
                   item.href === "/reserve"
-                    ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px]"
-                    : "hover:bg-gray-300 p-2 rounded-lg"
+                    ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px] hover:bg-black hover:text-white links-nav"
+                    : "hover:text-gray-500 p-2 rounded-lg links-nav"
                 }
               >
                 {item.name}
@@ -41,16 +41,20 @@ const Navbar = () => {
         />
       </div>
       <ul
-        className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full` }
+        className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full`}
       >
         {navbarItems.map((item) => (
-          <li key={item.href} className="p-4" onClick={() => setIsMenuOpen(false)}>
+          <li
+            key={item.href}
+            className="p-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Link
               to={item.href}
               className={
                 item.href === "/reserve"
-                  ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px]"
-                  : "hover:bg-gray-300 p-3 rounded-lg"
+                  ? "bg-[#808CFD] p-3 rounded-xl [word-spacing:5px] hover:bg-black hover:text-white links-nav"
+                  : "hover:text-gray-500 p-2 rounded-lg links-nav"
               }
             >
               {item.name}

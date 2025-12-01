@@ -59,6 +59,9 @@
   .links-button {
     @apply font-geist-mono font-normal text-base uppercase hover:bg-black hover:text-white rounded-xl;
   }
+  .links-nav {
+    @apply font-geist-mono text-base;
+  }
 }
 
 .plus-icon {
