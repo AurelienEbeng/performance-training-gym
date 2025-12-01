@@ -11,8 +11,8 @@ const Navbar = () => {
   ];
   const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-60";
   return (
-    <nav>
-      <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5 sticky w-full">
+    <nav className="border-b fixed w-full">
+      <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5">
         <a href="/" className="flex items-center">
           <img src="/vector.svg" />
           <div className="font-bold text-xl pl-2">PrimalTraining</div>

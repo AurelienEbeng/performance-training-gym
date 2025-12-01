@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <div className="py-8"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
