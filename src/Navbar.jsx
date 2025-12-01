@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const icon = isMenuOpen ? "multiply" : "plus";
+  const icon = isMenuOpen ? "minus" : "plus";
   const navbarItems = [
     { href: "/", name: "home" },
     { href: "/about", name: "about" },
@@ -36,7 +36,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div
-          className={`md:hidden ${icon}-icon w-18 h-18`}
+          className={`md:hidden ${icon}-icon w-18 h-18 bg-black`}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         />
       </div>
