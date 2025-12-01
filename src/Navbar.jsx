@@ -11,7 +11,7 @@ const Navbar = () => {
   ];
   const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-60";
   return (
-    <nav className="border-b fixed w-full">
+    <nav className="border-b fixed w-full z-10000">
       <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5">
         <a href="/" className="flex items-center">
           <img src="/vector.svg" />
@@ -41,7 +41,7 @@ const Navbar = () => {
         />
       </div>
       <ul
-        className={`uppercase bg-[#E9ECFF] text-center pb-3 z-100 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full`}
+        className={`uppercase bg-[#E9ECFF] text-center pb-3 ${navbarUlMarginTop} transition-all duration-500 ease-in-out md:hidden absolute w-full`}
       >
         {navbarItems.map((item) => (
           <li
