@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ScrollFadeIn from "./ScrollFadeIn";
 import { LINKS } from "./constants";
+import CallToAction from "./CallToAction";
 
 const Home = () => {
   return (
@@ -97,16 +98,12 @@ const Home = () => {
           </button>
         </div>
       </div>
-      {/* CTA */}
-      <div className="bg-color-one h-screen flex justify-center items-center">
-        <div className="text-center space-y-5 md:px-20 lg:px-0">
-          <div className="paragraph-two uppercase">What we believe in</div>
-          <div className="headline-three">Join the primal tribe today!</div>
-          <Link className="links-button bg-color-two hover:bg-black p-4" to={LINKS.reserve}>
-            Reserve you spot
-          </Link>
-        </div>
-      </div>
+      <CallToAction
+        bgColor="bg-color-one"
+        btnBgColor="bg-color-two"
+        headingText="Join the Primal Tribe Today!"
+        paragraphAboveHeadingText="WHAT WE BELIEVE IN"
+      />
     </>
   );
 };

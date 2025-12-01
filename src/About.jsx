@@ -1,11 +1,11 @@
 import useWindowSize from "./custom hooks/useWindowSize";
 import ScrollFadeIn from "./ScrollFadeIn";
+import CallToAction from "./CallToAction";
 
 const About = () => {
   let windowSize = useWindowSize();
   let reconnectImage =
     windowSize.width <= 640 ? "reconnectMobile" : "reconnect";
-    console.log(reconnectImage)
 
   return (
     <>
@@ -65,12 +65,16 @@ const About = () => {
           className="w-full h-full object-cover"
           alt="Image of woman working out"
         />
-        <div
-        className="text-white headline-two absolute top-7/10 left-6 md:w-130 lg:w-170"
-      >
-        We've created a space where you can reconnect with your primal self.
-      </div>
+        <div className="text-white headline-two absolute top-7/10 left-6 md:w-130 lg:w-170">
+          We've created a space where you can reconnect with your primal self.
+        </div>
       </ScrollFadeIn>
+      <CallToAction
+        bgColor="bg-color-two"
+        btnBgColor="bg-color-one"
+        headingText="Join the Primal Tribe Today!"
+        paragraphAboveHeadingText="WHAT WE BELIEVE IN"
+      />
     </>
   );
 };
