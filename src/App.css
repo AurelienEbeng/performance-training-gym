@@ -44,6 +44,10 @@
     @apply text-xl font-bold font-anek-tamil uppercase;
   }
 
+  .paragraph-one {
+    @apply text-base lg:text-lg font-normal font-geist;
+  }
+
   .paragraph-two {
     @apply text-sm lg:text-lg font-normal font-geist;
   }
