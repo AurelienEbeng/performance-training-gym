@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { LINKS } from "./constants";
 import Modal from "./Modal";
 import { useState } from "react";
+import CreateReservation from "./CreateReservation";
 
 const GymClass = ({ name, schedule, description }) => {
    const [isOpen, setIsOpen] = useState(false)
@@ -26,7 +27,7 @@ const GymClass = ({ name, schedule, description }) => {
       onClick={handleReserveYourSpot}>
         Reserve your spot
       </button>
-      <Modal isOpen={isOpen} onClose={()=> setIsOpen(false)}></Modal>
+      <Modal isOpen={isOpen} onClose={()=> setIsOpen(false)}><CreateReservation /></Modal>
     </div>
   );
 };
