@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 import { LINKS } from "./constants";
+import Modal from "./Modal";
+import { useState } from "react";
 
 const GymClass = ({ name, schedule, description }) => {
+   const [isOpen, setIsOpen] = useState(false)
+  function handleReserveYourSpot(){
+    setIsOpen(true);
+  }
   return (
-    <div className={`bg-color-two px-6 border-b pb-6 md:flex md:flex-col md:justify-between ${name==="Strength"?"":"md:border-l"}`}>
+    <div
+      className={`bg-color-two px-6 border-b pb-6 md:flex md:flex-col md:justify-between ${
+        name === "Strength" ? "" : "md:border-l"
+      }`}
+    >
       <div className="headline-two pb-40 pt-4">{name}</div>
       {schedule.map((item) => (
         <>
@@ -12,12 +22,11 @@ const GymClass = ({ name, schedule, description }) => {
         </>
       ))}
       <div className="paragraph-one pb-6">{description}</div>
-      <Link
-        className="bg-color-one links-button hover:bg-black p-4 block text-center border"
-        to={LINKS.reserve}
-      >
-        Reserve you spot
-      </Link>
+      <button className="bg-[#808CFD] p-3 rounded-xl [word-spacing:5px] hover:bg-black hover:text-white links-nav"
+      onClick={handleReserveYourSpot}>
+        Reserve your spot
+      </button>
+      <Modal isOpen={isOpen} onClose={()=> setIsOpen(false)}></Modal>
     </div>
   );
 };
