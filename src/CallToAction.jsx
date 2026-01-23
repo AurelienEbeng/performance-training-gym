@@ -25,7 +25,7 @@ const CallToAction = ({
             className={`${btnBgColor} links-button hover:bg-black p-4`}
             to={LINKS.reserve}
           >
-            Reserve you spot
+            Reserve your spot
           </Link>
         </div>
       </div>
