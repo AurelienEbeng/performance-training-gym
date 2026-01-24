@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import httpModule from "./axios";
+import Modal from "./Modal";
+import UpdateReservation from "./UpdateReservation";
 
 const ListOfReservations = () => {
   const [reservations, setReservations] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     httpModule
       .get("")
@@ -15,16 +18,23 @@ const ListOfReservations = () => {
   return (
     <div>
       {reservations.map((reservation) => (
-        <div className="pb-4" key={reservation.id}>
-          <div>Name: {reservation.name}</div>
-          <div>Class: {reservation.classType}</div>
-          <div>Time: {reservation.time}</div>
-          <div>Date: {reservation.date}</div>
-          <div className="flex flex-row gap-x-2">
-            <button>Update</button>
-            <button onClick={() => handleDelete(reservation.id)}>Delete</button>
+        <>
+          <div className="pb-4" key={reservation.id}>
+            <div>Name: {reservation.name}</div>
+            <div>Class: {reservation.classType}</div>
+            <div>Time: {reservation.time}</div>
+            <div>Date: {reservation.date}</div>
+            <div className="flex flex-row gap-x-2">
+              <button onClick={()=> setOpenModal(true)}>Update</button>
+              <button onClick={() => handleDelete(reservation.id)}>
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
+          <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
+            <UpdateReservation oldReservation={reservation} />
+          </Modal>
+        </>
       ))}
     </div>
   );
