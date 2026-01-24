@@ -17,6 +17,10 @@ const ListOfReservations = () => {
           <div>Class: {reservation.classType}</div>
           <div>Time: {reservation.time}</div>
           <div>Date: {reservation.date}</div>
+          <div className="flex flex-row gap-x-2">
+            <button>Update</button>
+            <button>Delete</button>
+          </div>
         </div>
       ))}
     </div>
