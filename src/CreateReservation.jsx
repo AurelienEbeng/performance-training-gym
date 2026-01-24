@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import httpModule from "./axios";
 
 const CreateReservation = () => {
   const [formData, setFormData] = useState({
     name: "",
-    class: "",
+    classType: "",
     date: "",
     time: "",
   });
@@ -15,16 +16,14 @@ const CreateReservation = () => {
       [name]: value,
     }));
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Form submitted! Check console for details.");
+  const handleSubmit = () => {
+    httpModule.post("", formData).catch((error) => {
+      alert("Error, check console");
+      console.log(error.response);
+    });
   };
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-y-2.5 max-w-80"
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col gap-y-2.5 max-w-80">
       <label>
         Name:
         <input
@@ -40,7 +39,7 @@ const CreateReservation = () => {
         Class:
         <input
           type="text"
-          name="class"
+          name="classType"
           value={formData.class}
           onChange={handleChange}
           required
