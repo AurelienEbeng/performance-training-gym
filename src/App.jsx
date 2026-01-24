@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { Routes, Route } from "react-router-dom";
 import Reserve from "./Reserve";
 import Footer from "./Footer";
+import ListOfReservations from "./ListOfReservations";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/reserve" element={<Reserve />} />
+        <Route path="/reservations" element={<ListOfReservations />} />
       </Routes>
       <Footer />
     </>
