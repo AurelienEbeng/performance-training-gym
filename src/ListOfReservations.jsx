@@ -6,15 +6,22 @@ import UpdateReservation from "./UpdateReservation";
 const ListOfReservations = () => {
   const [reservations, setReservations] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
+    getReservations();
+  }, []);
+
+  function getReservations() {
     httpModule
       .get("")
       .then((res) => setReservations(res.data))
       .catch((error) => console.log(error));
-  }, []);
-  function handleDelete(id) {
-    httpModule.delete(`delete/${id}/`).catch((error) => console.log(error));
   }
+
+  function handleDelete(id) {
+    httpModule.delete(`${id}/`).then(getReservations()).catch((error) => console.log(error));
+  }
+
   return (
     <div>
       {reservations.map((reservation) => (
@@ -25,7 +32,7 @@ const ListOfReservations = () => {
             <div>Time: {reservation.time}</div>
             <div>Date: {reservation.date}</div>
             <div className="flex flex-row gap-x-2">
-              <button onClick={()=> setOpenModal(true)}>Update</button>
+              <button onClick={() => setOpenModal(true)}>Update</button>
               <button onClick={() => handleDelete(reservation.id)}>
                 Delete
               </button>
