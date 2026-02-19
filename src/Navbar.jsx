@@ -7,6 +7,7 @@ const Navbar = () => {
   const navbarItems = [
     { href: "/", name: "home" },
     { href: "/about", name: "about" },
+    { href: "/reservations", name: "reservations" },
     { href: "/reserve", name: "reserve your spot" },
   ];
   const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-60";
