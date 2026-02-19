@@ -24,6 +24,9 @@ const ListOfReservations = () => {
 
   return (
     <div>
+      <div className="text-center text-black py-4 border-y headline-one">
+        Reservations
+      </div>
       {reservations.map((reservation) => (
         <>
           <div className="pb-4" key={reservation.id}>
