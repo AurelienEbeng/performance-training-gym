@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { LINKS } from "./constants";
+import Modal from "./Modal";
+import { useState } from "react";
+import CreateReservation from "./CreateReservation";
 
 const CallToAction = ({
   bgColor,
@@ -8,6 +9,10 @@ const CallToAction = ({
   paragraphAboveHeadingText,
   paragraphBelowHeadingText,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  function handleReserveYourSpot() {
+    setIsOpen(true);
+  }
   return (
     <div>
       <div
@@ -21,14 +26,17 @@ const CallToAction = ({
           <div className="paragraph-two md:px-20 lg:px-70">
             {paragraphBelowHeadingText}
           </div>
-          <Link
+          <button
             className={`${btnBgColor} links-button hover:bg-black p-4`}
-            to={LINKS.reserve}
+            onClick={handleReserveYourSpot}
           >
-            Reserve your spot
-          </Link>
+            Reserve Your Spot
+          </button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <CreateReservation />
+      </Modal>
     </div>
   );
 };
