@@ -5,7 +5,7 @@ const LoadingContext = createContext(undefined);
 export const LoadingProvider = ({ children }) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const toggleDisable = () => {
-    setIsDisabled(!isDisabled);
+    setIsDisabled(prev => !prev);
   };
 
   return (
