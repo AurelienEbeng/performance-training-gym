@@ -1,5 +1,7 @@
 import { useState } from "react";
 import httpModule from "./axios";
+import { useLoadingContext } from "./LoadingContext";
+import { useNavigate } from "react-router-dom";
 
 const CreateReservation = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,8 @@ const CreateReservation = () => {
     time: "06:00",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -16,11 +20,21 @@ const CreateReservation = () => {
       [name]: value,
     }));
   };
-  const handleSubmit = () => {
-    httpModule.post("", formData).catch((error) => {
-      alert("Error, check console");
-      console.log(error.response);
-    });
+
+  const { toggleDisable, isDisabled } = useLoadingContext();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toggleDisable();
+    httpModule
+      .post("", formData)
+      .then(() => {
+        toggleDisable();
+        navigate("/reservations");
+      })
+      .catch((error) => {
+        alert("Error, check console");
+        console.log(error.response);
+      });
   };
   const timeOptions = {
     Strength: ["06:00", "08:00"],
@@ -77,7 +91,9 @@ const CreateReservation = () => {
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={isDisabled}>
+        Submit
+      </button>
     </form>
   );
 };
