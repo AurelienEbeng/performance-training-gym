@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import httpModule from "./axios";
 import Modal from "./Modal";
 import UpdateReservation from "./UpdateReservation";
+import { useLoadingContext } from "./LoadingContext";
 
 const ListOfReservations = () => {
   const [reservations, setReservations] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [oldReservation, setOldReservation] = useState({});
+  const { isDisabled, toggleDisable } = useLoadingContext();
 
   useEffect(() => {
     getReservations();
@@ -20,9 +22,13 @@ const ListOfReservations = () => {
   }
 
   function handleDelete(id) {
+    toggleDisable();
     httpModule
       .delete(`${id}/`)
-      .then(getReservations())
+      .then(() => {
+        toggleDisable();
+        getReservations();
+      })
       .catch((error) => console.log(error));
   }
 
@@ -44,7 +50,7 @@ const ListOfReservations = () => {
         </thead>
         <tbody>
           {reservations.map((reservation) => (
-            <tr>
+            <tr key={reservation.id}>
               <td className="border">{reservation.name}</td>
               <td className="border">{reservation.classType}</td>
               <td className="border">{reservation.time}</td>
@@ -56,6 +62,7 @@ const ListOfReservations = () => {
                     setOpenModal(true);
                     setOldReservation(reservation);
                   }}
+                  disabled={isDisabled}
                 >
                   Update
                 </button>
@@ -64,6 +71,7 @@ const ListOfReservations = () => {
                 <button
                   className="bg-black text-white rounded-xl px-3"
                   onClick={() => handleDelete(reservation.id)}
+                  disabled={isDisabled}
                 >
                   Delete
                 </button>
@@ -73,7 +81,10 @@ const ListOfReservations = () => {
         </tbody>
       </table>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
-        <UpdateReservation oldReservation={oldReservation} onClose={() => setOpenModal(false)}/>
+        <UpdateReservation
+          oldReservation={oldReservation}
+          onClose={() => setOpenModal(false)}
+        />
       </Modal>
     </div>
   );
