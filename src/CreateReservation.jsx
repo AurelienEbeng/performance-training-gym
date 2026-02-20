@@ -38,6 +38,7 @@ const CreateReservation = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          className="border"
         />
       </label>
 
