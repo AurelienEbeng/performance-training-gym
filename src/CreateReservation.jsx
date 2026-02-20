@@ -8,7 +8,7 @@ const CreateReservation = () => {
     name: "",
     classType: "Strength",
     date: "",
-    time: "06:00",
+    time: "06:00 AM",
   });
 
   const navigate = useNavigate();
@@ -19,6 +19,10 @@ const CreateReservation = () => {
       ...prev,
       [name]: value,
     }));
+
+    if (name === "classType") {
+      setFormData((prev) => ({ ...prev, time: timeOptions[value][0] }));
+    }
   };
 
   const { toggleDisable, isDisabled } = useLoadingContext();
@@ -39,13 +43,13 @@ const CreateReservation = () => {
         }
         alert("Error, check console");
         console.log(error.response);
-        
       });
   };
+
   const timeOptions = {
-    Strength: ["06:00", "08:00"],
-    Conditioning: ["08:00", "10:00"],
-    "Community Classes": ["08:00"],
+    Strength: ["06:00 AM", "08:00 AM"],
+    Conditioning: ["08:00 AM", "10:00 AM"],
+    "Community Classes": ["08:00 AM"],
   };
 
   return (
