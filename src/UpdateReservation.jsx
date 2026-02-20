@@ -17,6 +17,10 @@ const UpdateReservation = ({ oldReservation, onClose }) => {
       ...prev,
       [name]: value,
     }));
+
+    if (name === "classType") {
+      setFormData((prev) => ({ ...prev, time: timeOptions[value][0] }));
+    }
   };
 
   const { toggleDisable, isDisabled } = useLoadingContext();
@@ -28,15 +32,20 @@ const UpdateReservation = ({ oldReservation, onClose }) => {
       .put(`${formData.id}/`, formData)
       .then(() => {toggleDisable(); onClose();})
       .catch((error) => {
+        toggleDisable();
+        if (error.response.status == 400) {
+          alert(error.response.data);
+          return;
+        }
         alert("Error, check console");
         console.log(error.response);
       });
   };
 
   const timeOptions = {
-    Strength: ["06:00", "08:00"],
-    Conditioning: ["08:00", "10:00"],
-    "Community Classes": ["08:00"],
+    Strength: ["06:00 AM", "08:00 AM"],
+    Conditioning: ["08:00 AM", "10:00 AM"],
+    "Community Classes": ["08:00 AM"],
   };
 
   return (
