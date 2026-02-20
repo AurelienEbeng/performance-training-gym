@@ -10,7 +10,7 @@ const Navbar = () => {
     { href: "/reservations", name: "reservations" },
     { href: "/reserve", name: "reserve your spot" },
   ];
-  const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-60";
+  const navbarUlMarginTop = isMenuOpen ? "mt-0" : "-mt-100";
   return (
     <nav className="border-b fixed w-full z-10000">
       <div className="font-instrument-sans flex justify-between px-4 bg-[#E9ECFF] items-center md:py-5">
