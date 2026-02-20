@@ -73,7 +73,7 @@ const ListOfReservations = () => {
         </tbody>
       </table>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
-        <UpdateReservation oldReservation={oldReservation} />
+        <UpdateReservation oldReservation={oldReservation} onClose={() => setOpenModal(false)}/>
       </Modal>
     </div>
   );
