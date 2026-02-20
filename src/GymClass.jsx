@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { LINKS } from "./constants";
 import Modal from "./Modal";
 import { useState } from "react";
 import CreateReservation from "./CreateReservation";
