@@ -32,8 +32,14 @@ const CreateReservation = () => {
         navigate("/reservations");
       })
       .catch((error) => {
+        toggleDisable();
+        if (error.response.status == 400) {
+          alert(error.response.data);
+          return;
+        }
         alert("Error, check console");
         console.log(error.response);
+        
       });
   };
   const timeOptions = {
