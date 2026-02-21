@@ -2,7 +2,7 @@ import { useState } from "react";
 import httpModule from "./axios";
 import { useLoadingContext } from "./LoadingContext";
 
-const UpdateReservation = ({ oldReservation, onClose }) => {
+const UpdateReservation = ({ oldReservation, onClose, getReservations }) => {
   const [formData, setFormData] = useState({
     name: oldReservation.name,
     classType: oldReservation.classType,
@@ -30,7 +30,11 @@ const UpdateReservation = ({ oldReservation, onClose }) => {
     toggleDisable();
     httpModule
       .put(`${formData.id}/`, formData)
-      .then(() => {toggleDisable(); onClose();})
+      .then(() => {
+        toggleDisable();
+        onClose();
+        getReservations();
+      })
       .catch((error) => {
         toggleDisable();
         if (error.response.status == 400) {
@@ -74,8 +78,6 @@ const UpdateReservation = ({ oldReservation, onClose }) => {
         <option value="Community Classes">Community Classes</option>
       </select>
 
-      
-
       <label for="time">Choose a time:</label>
       <select
         name="time"
@@ -99,7 +101,9 @@ const UpdateReservation = ({ oldReservation, onClose }) => {
         />
       </label>
 
-      <button type="submit" disabled={isDisabled}>Submit</button>
+      <button type="submit" disabled={isDisabled}>
+        Submit
+      </button>
     </form>
   );
 };

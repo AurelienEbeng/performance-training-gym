@@ -84,6 +84,7 @@ const ListOfReservations = () => {
         <UpdateReservation
           oldReservation={oldReservation}
           onClose={() => setOpenModal(false)}
+          getReservations={getReservations}
         />
       </Modal>
     </div>
